@@ -4,13 +4,13 @@ pipeline {
         stage('DELETION') { 
             steps {
                 echo '--REMOVING REPOSITORY IF ALREADY EXIST --'
-                sh "sudo rm -rf devops_HelloWord_jenk"
+                sh "sudo rm -rf devops_HelloWorld_jenk"
             }
         }
        stage('CLONE') { 
             steps {
                 echo '--CLONE STAGE EXECUTION ---'
-    sh "git clone https://github.com/mentorchita/devops_HelloWord_jenk.git"
+    sh "git clone https://github.com/mentorchita/devops_HelloWorld_jenk.git"
             }
         }
         stage('TEST1') { 
@@ -26,7 +26,7 @@ pipeline {
         stage('BUILD') { 
             steps {
     echo '--BUILD STAGE EXECUTION --'
-    sh "node devops_HelloWord_jenk/index.js"
+    sh "node devops_HelloWorld_jenk/index.js"
             }
         }
   stage('DEPLOY') { 
